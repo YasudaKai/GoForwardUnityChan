@@ -19,16 +19,13 @@ public class CubeSoundEffect : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.tag == "GroundTag")
+    void OnCollisionEnter2D(Collision2D other)
+    { 
+        
+        if (other.gameObject.tag == "GroundTag" || this.gameObject.tag == "CubeTag")
         {
             GetComponent<AudioSource>().Play();
         }
 
-        if(other.gameObject.tag == "CubeTag")
-        {
-            GetComponent<AudioSource>().Play();
-        }
     }
 }
